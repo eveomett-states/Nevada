@@ -1,6 +1,11 @@
-# Nevada Election Shapefile
+# License
+This data was generated using data from the Redistricting Data Hub.  Any use of this project shall also comply with restrictions on use of data and attribution requirements set forth in the Redistricting Data Hub terms and conditions found at: [https://redistrictingdatahub.org/terms-and-conditions/](https://redistrictingdatahub.org/terms-and-conditions/).
 
-This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal.
+Use of this project is further governed by the terms of the [Creative Commons Attribution Noncommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode.en)
+
+# Nevada Json
+
+This shapefile was processed by Professor Ellen Veomett and her student Ananya Agarwal using the corresponding jupyter notebook.  As part of the cleaning process, precincts were nested within counties and small rook adjacencies (under 30.5 m) were changed to queen adjacencies.
 
 # **Sources**
 
@@ -20,17 +25,19 @@ Obtain the following data from Restricting Data Hub
 
 [2016 election data](https://redistrictingdatahub.org/dataset/vest-2016-nevada-precinct-and-election-results/)**:**  VEST 2016 Nevada precinct and election results
 
+[2020 County data](https://redistrictingdatahub.org/dataset/nevada-county-pl-94171-2020/): from 2020 Census Redistricting Data (P.L. 94-171) Shapefiles
+
 # **Processing**
 
-Demographic data were aggregated from the census block level and precincts were assigned to districts using [MGGG's proration software](https://github.com/mggg/maup). Election data were also prorated onto VTDs from the original precinct shapefile using the `maup` package.
+Data were cleaned and aggregated in the corresponding jupyter notebook using MGGG’s python library [maup](https://github.com/mggg/maup). 
 
 # **Metadata**
 
 Below is a brief description of each of the listed variables in the attribute table of the VTD shapefile:
 
-- `STATEFP`: State FIPS code
-- `COUNTYFP`: County FIPS code
-- `COUNTY`: County code
+- `STATEFP20`: State FIPS code
+- `COUNTYFP20`: County FIPS code
+- `COUNTY20`: County code
 - `VTDST20`: Voting tabulation district FIPS code
 - `NAME20`: Voting tabulation district name
 - `CD`: Congressional district ID in 2022 enacted congressional map
@@ -64,9 +71,18 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `ATG18D`: Number of votes for 2018 Democratic attorney general candidate
 - `ATG18R`: Number of votes for 2018 Republican attorney general candidate
 - `ATG18O`: Number of votes for 2018 other party's attorney general candidate
+- `CON18D`: Number of votes for 2018 Democratic State Controller candidate
+- `CON18R`: Number of votes for 2018 Republican State Controller candidate
+- `CON18O`: Number of votes for 2018 other party's State Controller candidate
 - `GOV18D`: Number of votes for 2018 Democratic gubernatorial candidate
 - `GOV18R`: Number of votes for 2018 Republican gubernatorial candidate
 - `GOV18O`: Number of votes for 2018 other party's gubernatorial candidate
+- `LTG18D`: Number of votes for 2018 Democratic Lieutenant Governor candidate
+- `LTG18R`: Number of votes for 2018 Republican Lieutenant Governor candidate
+- `LTG18O`: Number of votes for 2018 other party's Lieutenant Governor candidate
+- `PRE16D`: Number of votes for 2016 Democratic presidential candidate
+- `PRE16R`: Number of votes for 2016 Republican presidential candidate
+- `PRE16O`: Number of votes for 2016 other party's presidential candidate
 - `PRE20D`: Number of votes for 2020 Democratic presidential candidate
 - `PRE20R`: Number of votes for 2020 Republican presidential candidate
 - `PRE20O`: Number of votes for 2020 other party's presidential candidate
@@ -76,12 +92,13 @@ Below is a brief description of each of the listed variables in the attribute ta
 - `TRE18D`: Number of votes for 2018 Democratic Treasurer
 - `TRE18R`: Number of votes for 2018 Republican Treasurer
 - `TRE18O`: Number of votes for 2018 other party's Treasurer
-- `USS20D`: Number of votes for 2020 Democratic senate candidate
-- `USS20R`: Number of votes for 2020 Republican senate candidate
-- `USS20O`: Number of votes for 2020 other party's senate candidate
-- `COM18D`: Number of votes for 2018 Democratic Comptroller
-- `COM18R`: Number of votes for 2018 Republican Comptroller
-- `COM18O`: Number of votes for 2018 other party's Comptroller
+- `USS16D`: Number of votes for 2016 Democratic senate candidate
+- `USS16R`: Number of votes for 2016 Republican senate candidate
+- `USS16O`: Number of votes for 2016 other party's senate candidate
+- `USS18D`: Number of votes for 2018 Democratic senate candidate
+- `USS18R`: Number of votes for 2018 Republican senate candidate
+- `USS18O`: Number of votes for 2018 other party's senate candidate
+
 
 # **Projection**
 
